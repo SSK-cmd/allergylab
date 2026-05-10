@@ -7,7 +7,7 @@ db_pass = os.environ['DB_PASS']
 
 def connection():
     # Edited out actual values
-    conn = mysql.connector.connect( host='dbhost',
+    conn = mysql.connector.connect( host=db_host,
                             port=3306,
                             database=db_name,
                             user=db_user,
@@ -15,3 +15,5 @@ def connection():
     c = conn.cursor()
 
     return c, conn
+
+db_host = os.environ['DB_HOST']
